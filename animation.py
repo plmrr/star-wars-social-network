@@ -34,8 +34,10 @@ def animation():
             alpha=0.85
         )
         if i == 110:
+            plt.savefig(f'{"frames"}/frame_{str(i).zfill(5)}.png')
             plt.show(block=True)
         else:
+            plt.savefig(f'{"frames"}/frame_{str(i).zfill(5)}.png')
             plt.show(block=False)
             plt.pause(0.3)
             plt.clf()

@@ -2,6 +2,7 @@ import networkx as nx
 import json
 import matplotlib.pyplot as plt
 from animation import animation
+from gif import create_gif
 
 with open('data/sw.json', 'r') as file:
     data = json.load(file)
@@ -62,5 +63,6 @@ most_shortest_paths_e = max(nx.edge_betweenness_centrality(G), key=nx.edge_betwe
 print(f'The relationship between two characters that has the highest % of shortest paths: '
       f'{most_shortest_paths_e} {round(nx.edge_betweenness_centrality(G)[most_shortest_paths_e], 3) * 100}%')
 
-# plt.show()
+plt.show()
 animation()
+create_gif('frames', 'new.gif')
